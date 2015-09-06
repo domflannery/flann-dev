@@ -1,6 +1,6 @@
 ---
   - name: copy over the percona repo script
-    copy: src=roles/percona/files/percona_repo dest=/tmp/percona_repo owner=vagrant mode=0770
+    copy: src=roles/database/files/percona_repo dest=/tmp/percona_repo owner=vagrant mode=0770
     register: percona_repo_copy
 
   - name: run the percona repo script

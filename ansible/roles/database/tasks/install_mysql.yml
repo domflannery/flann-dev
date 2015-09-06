@@ -1,0 +1,9 @@
+---
+  - name: copy over the mysql repo
+    copy: src=roles/database/files/mysql.list dest=/etc/apt/sources.list.d/mysql.list owner=root mode=0644
+
+  - name: update apt cache 
+    apt: update_cache=yes
+
+  - name: Install mysql
+    apt: name=mysql-server state=latest force=yes

@@ -2,5 +2,7 @@
   - hosts: database
     remote_user: vagrant
     sudo: yes
+    vars:
+      mysql_variant: mysql
     roles:
-      - percona
+      - database
