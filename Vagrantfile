@@ -6,7 +6,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.define :lb1, autostart: false do |lb1|
-    lb1.vm.box = "hashicorp/precise64"
+    lb1.vm.box = "ubuntu/vivid64"
     lb1.vm.network "private_network", ip: "10.11.1.100"
     lb1.vm.network "forwarded_port", guest: 22, host: 2222, id: "ssh", disabled: "true"
     lb1.vm.network "forwarded_port", guest: 22, host: 2200
@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define :www1 do |www1|
-    www1.vm.box = "hashicorp/precise64"
+    www1.vm.box = "ubuntu/vivid64"
     www1.vm.network "private_network", ip: "10.11.1.101"
     www1.vm.network "forwarded_port", guest: 22, host: 2222, id: "ssh", disabled: "true"
     www1.vm.network "forwarded_port", guest: 22, host: 2201
@@ -22,7 +22,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define :www2, autostart: false do |www2|
-    www2.vm.box = "hashicorp/precise64"
+    www2.vm.box = "ubuntu/vivid64"
     www2.vm.network "private_network", ip: "10.11.1.102"
     www2.vm.network "forwarded_port", guest: 22, host: 2222, id: "ssh", disabled: "true"
     www2.vm.network "forwarded_port", guest: 22, host: 2202
